@@ -36,7 +36,7 @@ export default function ContinueFilm() {
         {images.map((images) => {
           return (
             <div
-              className={`relative w-full max-w-sm h-[162px] w-[302px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 bg-cover`}
+              className={`relative s h-[162px] w-[302px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 bg-cover`}
               style={{ backgroundImage: `url(${images.src})` }}
             >
               <div className="pb-5 text-white ">

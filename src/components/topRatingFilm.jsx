@@ -49,7 +49,7 @@ export default function TopRatingFilm() {
           return (
             <>
               <div
-                className={`relative w-full max-w-sm h-[365px] w-[234px]  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 bg-cover`}
+                className={`relative   h-[365px] w-[234px]  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 bg-cover`}
                 style={{ backgroundImage: `url(${images.src})` }}
                 data-popover-target={`popover-default-${images.id}`}
                 data-popover-placement="bottom-end"

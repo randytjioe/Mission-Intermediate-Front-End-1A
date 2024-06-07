@@ -4,27 +4,22 @@ import { IoArrowBackSharp } from "react-icons/io5";
 export default function NewFilm() {
   const images = [
     {
-
       src: "/assets/new_1.png",
       label: "top",
     },
     {
-  
       src: "/assets/new_2.png",
       label: "new",
     },
     {
-  
       src: "/assets/new_3.png",
       label: "top",
     },
     {
-
       src: "/assets/new_4.png",
       label: "new",
     },
     {
-
       src: "/assets/new_5.png",
       label: "",
     },
@@ -39,7 +34,7 @@ export default function NewFilm() {
         {images.map((images) => {
           return (
             <div
-              className={`relative w-full max-w-sm h-[365px] w-[234px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 bg-cover`}
+              className={`relative h-[365px] w-[234px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 bg-cover`}
               style={{ backgroundImage: `url(${images.src})` }}
             >
               {images.label === "new" ? (
