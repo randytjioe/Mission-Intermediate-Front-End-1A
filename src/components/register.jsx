@@ -1,4 +1,32 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+
 export default function Register() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (password === confirmPassword) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Success Register",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        navigate('/login')
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password dan konfirmasi password tidak cocok",
+        footer: '<a href="#">Silahkan cek kembali</a>'
+      });
+    }
+  };
   return (
     <section className="bg-gray-50 dark:bg-gray-900 ">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto bg-contain md:h-screen lg:py-0 bg-register">
@@ -18,21 +46,22 @@ export default function Register() {
               </div>
             </div>
 
-            <form className="space-y-4 md:space-y-6" action="#">
+            <form className="space-y-4 md:space-y-6" action="#" onSubmit={handleSubmit}>
               <div>
                 <label
-                  htmlFor="email"
+                  htmlFor="username"
                   className="block mb-2  font-medium text-white dark:text-white text-[18px] "
                 >
                   Username
                 </label>
                 <input
-                  type="email"
-                  name="email"
-                  id="email"
+                  type="text"
+                  name="username"
+                  id="username"
                   className=" border bg-[#181A1C]/80 border-gray-300 sm:text-sm rounded-full focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-white pl-5"
                   placeholder="Masukan username"
                   required=""
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
               <div>
@@ -47,8 +76,10 @@ export default function Register() {
                   name="password"
                   id="password"
                   placeholder="Masukan Password"
-                  className="bg-[#181A1C]/80 border border-gray-300 text-gray-900 sm:text-sm rounded-full focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 pl-5"
+                  className="bg-[#181A1C]/80 border border-gray-300 text-white sm:text-sm rounded-full focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 pl-5"
                   required=""
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div>
@@ -63,8 +94,10 @@ export default function Register() {
                   name="password"
                   id="password"
                   placeholder="Masukan Konfirmasi Kata Sandi"
-                  className="bg-[#181A1C]/80 border border-gray-300 text-gray-900 sm:text-sm rounded-full focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 pl-5"
+                  className="bg-[#181A1C]/80 border border-gray-300 text-white sm:text-sm rounded-full focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 pl-5"
                   required=""
+                  value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
                 />
               </div>
               <div className="flex items-center justify-between">
@@ -107,3 +140,4 @@ export default function Register() {
     </section>
   );
 }
+

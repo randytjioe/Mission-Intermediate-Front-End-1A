@@ -6,36 +6,8 @@ import {
 } from "react-icons/io";
 import { IoArrowBackSharp } from "react-icons/io5";
 
-export default function TopRatingFilm() {
-  const images = [
-    {
-      id: 1,
-      src: "/assets/top_1.jpg",
-      new: true,
-      popOver: "/assets/top_p_1.png",
-    },
-    {
-      id: 2,
-      src: "/assets/top_2.jpg",
-      popOver: "/assets/top_p_2.png",
-    },
-    {
-      id: 3,
-      src: "/assets/top_3.jpg",
-      popOver: "/assets/top_p_3.png",
-    },
-    {
-      id: 4,
-      src: "/assets/top_4.jpg",
-      new: true,
-      popOver: "/assets/top_p_4.png",
-    },
-    {
-      id: 5,
-      src: "/assets/top_5.jpg",
-      popOver: "/assets/top_p_5.png",
-    },
-  ];
+export default function TopRatingFilm({images}) {
+  
   return (
     <div className="px-[80px] py-[40px] w-full flex flex-col bg-[#181A1C] dark:bg-gray-900 text-white ">
       <div className="text-[32px] font-medium py-[40px] ">
@@ -49,7 +21,7 @@ export default function TopRatingFilm() {
           return (
             <>
               <div
-                className={`relative   h-[365px] w-[234px]  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 bg-cover`}
+                className={`relative   h-[365px] w-[234px] md:w-1/6  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 bg-cover`}
                 style={{ backgroundImage: `url(${images.src})` }}
                 data-popover-target={`popover-default-${images.id}`}
                 data-popover-placement="bottom-end"

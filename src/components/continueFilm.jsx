@@ -1,29 +1,8 @@
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { IoArrowBackSharp } from "react-icons/io5";
 
-export default function ContinueFilm() {
-  const images = [
-    {
-      name: "Dont't Look Up",
-      src: "/assets/continue_1.jpg",
-      rating: "4.5",
-    },
-    {
-      name: "Dont't Look Up",
-      src: "/assets/continue_2.jpg",
-      rating: "4.5",
-    },
-    {
-      name: "Dont't Look Up",
-      src: "/assets/continue_3.jpg",
-      rating: "4.5",
-    },
-    {
-      name: "Dont't Look Up",
-      src: "/assets/continue_4.jpg",
-      rating: "4.5",
-    },
-  ];
+export default function ContinueFilm({images}) {
+  
   return (
     <div className="px-[80px] py-[40px] w-full flex flex-col bg-[#181A1C] dark:bg-gray-900 text-white ">
       <div className="text-[32px] font-medium py-[40px] ">
@@ -36,7 +15,7 @@ export default function ContinueFilm() {
         {images.map((images) => {
           return (
             <div
-              className={`relative s h-[162px] w-[302px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 bg-cover`}
+              className={`relative s h-[162px] w-[302px] md:w-1/5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 bg-cover`}
               style={{ backgroundImage: `url(${images.src})` }}
             >
               <div className="pb-5 text-white ">
