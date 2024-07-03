@@ -4,6 +4,7 @@ import { BsPencilSquare } from 'react-icons/bs';
 import { PiPencilSimpleLineBold } from 'react-icons/pi';
 import { IoTrashBin } from 'react-icons/io5';
 import { RxCrossCircled } from 'react-icons/rx';
+import Swal from 'sweetalert2';
 
 export default function AdminComponent () {
   const [films, setFilms] = useState([]);
@@ -33,9 +34,28 @@ export default function AdminComponent () {
   };
 
   const handleDeleteFilm = (index) => {
-    const updatedFilms = films.filter((_, i) => i !== index);
-    setFilms(updatedFilms);
-    localStorage.setItem('films', JSON.stringify(updatedFilms));
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        
+      const updatedFilms = films.filter((_, i) => i !== index);
+      setFilms(updatedFilms);
+      localStorage.setItem('films', JSON.stringify(updatedFilms));
+      Swal.fire({
+          title: "Deleted!",
+          text: "Your film has been deleted.",
+          icon: "success"
+        });
+      }
+    });
+    
   };
 
   const handleEditFilm = (index) => {
