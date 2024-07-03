@@ -21,7 +21,7 @@ export default function Footer() {
             <h2 className="mb-6 text-lg font-bold text-white uppercase dark:text-white">
               Genre
             </h2>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap gap-6">
               <ul className="text-white dark:text-gray-400">
                 <li className="mb-4">
                   <a href="https://flowbite.com/" className="hover:underline">

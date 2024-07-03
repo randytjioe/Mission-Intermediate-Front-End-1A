@@ -94,7 +94,9 @@ export default function AdminComponent () {
           </div>
         </div>
       )}
-      <table className="min-w-full divide-y divide-gray-200 mt-4">
+         <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+        <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
+          <table className="min-w-full leading-normal">
         <thead className="bg-gray-50">
           <tr>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -147,6 +149,8 @@ export default function AdminComponent () {
           ))}
         </tbody>
       </table>
+      </div>
+      </div>
     </div>
   );
 };
