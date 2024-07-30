@@ -31,7 +31,6 @@ export default function AdminComponent() {
   };
 
   const handleUpdateFilm = (updatedFilm) => {
-    console.log(updatedFilm);
     updateFilm(updatedFilm);
     closeModal();
   };

@@ -24,7 +24,6 @@ export const addFilmApi = async (film) => {
 };
 
 export const updateFilmApi = async (film) => {
-  console.log(film);
   return fetchJson(`${API_BASE_URL}/films/${film.id}`, {
     method: "PUT",
     headers: {

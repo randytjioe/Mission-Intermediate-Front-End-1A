@@ -13,17 +13,12 @@ export default function DetailPage() {
     loadFilms();
   }, [loadFilms]);
 
-  
-
   useEffect(() => {
     if (status === 'succeeded') {
       const selectedFilm = films.find((f) => f.id === id);
-      console.log("ini selected  film",selectedFilm)
       setFilm(selectedFilm);
     }
   }, [films, id, status]);
-  console.log("ini film",films);
-  console.log(id)
 
   if (status === 'loading') {
     return <div className="text-center py-10 text-lg">Loading...</div>;
