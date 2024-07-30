@@ -138,22 +138,22 @@ export default function Footer() {
             </h2>
             <ul className="font-medium text-gray-500 dark:text-gray-400">
               <li className="mb-4">
-                <a href="#" className="text-white hover:underline">
+                <a href="/" className="text-white hover:underline">
                   FAQ
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="text-white hover:underline">
+                <a href="/" className="text-white hover:underline">
                   Kontak Kami
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="text-white hover:underline">
+                <a href="/" className="text-white hover:underline">
                   Privasi
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="text-white hover:underline">
+                <a href="/" className="text-white hover:underline">
                   Syarat & Ketentuan
                 </a>
               </li>

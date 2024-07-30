@@ -93,7 +93,7 @@ export default function Login() {
                   </a>
                 </div>
                 <a
-                  href="#"
+                  href="/"
                   className="text-[16px] font-medium text-white text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Lupa kata sandi?

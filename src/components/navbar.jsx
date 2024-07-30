@@ -2,7 +2,6 @@ import { FaUser } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoStar } from "react-icons/io5";
 import { RiLogoutBoxRLine } from "react-icons/ri";
-import Modal from "./modal";
 
 export default function Navbar() {
   return (
@@ -41,7 +40,7 @@ export default function Navbar() {
             <ul className="py-2" aria-labelledby="user-menu-button">
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="flex items-center block gap-2 px-4 py-2 text-sm text-white hover:text-blue-700 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                 >
                   <FaUser className="text-white hover:text-blue-700" />
@@ -50,7 +49,7 @@ export default function Navbar() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="flex items-center block gap-2 px-4 py-2 text-sm text-white hover:text-blue-700 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                 >
                   <IoStar className="text-white hover:text-blue-700" />
@@ -101,7 +100,7 @@ export default function Navbar() {
           <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <a
-                href="#"
+                href="/"
                 className="block px-3 py-2 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 aria-current="page"
               >
@@ -110,20 +109,19 @@ export default function Navbar() {
             </li>
             <li>
               <a
-                href="#"
+                href="/films"
                 className="block px-3 py-2 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Film
               </a>
             </li>
             <li>
-             
-            <a
-                href="#"
+              <a
+                href="/"
                 className="block px-3 py-2 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
-            Daftar Saya
-           </a>
+                Daftar Saya
+              </a>
             </li>
             <li>
               <a

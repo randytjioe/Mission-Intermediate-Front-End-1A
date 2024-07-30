@@ -7,6 +7,8 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
+
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
@@ -23,7 +25,7 @@ export default function Register() {
         icon: "error",
         title: "Oops...",
         text: "Password dan konfirmasi password tidak cocok",
-        footer: '<a href="#">Silahkan cek kembali</a>'
+        footer: '<a href="/">Silahkan cek kembali</a>'
       });
     }
   };
@@ -104,7 +106,7 @@ export default function Register() {
                 <div className="flex items-start text-white text-[16px] font-medium">
                   Sudah punya akun?
                   <a
-                    href="#"
+                    href="/"
                     className="text-[16px] font-bold text-[16px] text-white text-primary-600 hover:underline dark:text-primary-500 pl-2"
                   >
                     Masuk

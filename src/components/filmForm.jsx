@@ -1,20 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const FilmForm = ({ onAddFilm, onUpdateFilm, editingFilm }) => {
-  const [title, setTitle] = useState('');
-  const [director, setDirector] = useState('');
-  const [year, setYear] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
-  const [description, setDescription] = useState('');
-  const [cast, setCast] = useState('');
-  const [genre, setGenre] = useState('');
-  const [duration, setDuration] = useState('');
-  const [label, setLabel] = useState('');
+  const [id, setId] = useState(0);
+  const [title, setTitle] = useState("");
+  const [director, setDirector] = useState("");
+  const [year, setYear] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [description, setDescription] = useState("");
+  const [cast, setCast] = useState("");
+  const [genre, setGenre] = useState("");
+  const [duration, setDuration] = useState("");
+  const [rating, setRating] = useState("");
+  const [label, setLabel] = useState("");
 
   const navigate = useNavigate();
   useEffect(() => {
     if (editingFilm) {
+      setId(editingFilm.id);
       setTitle(editingFilm.title);
       setDirector(editingFilm.director);
       setYear(editingFilm.year);
@@ -23,28 +26,41 @@ const FilmForm = ({ onAddFilm, onUpdateFilm, editingFilm }) => {
       setCast(editingFilm.cast);
       setGenre(editingFilm.genre);
       setDuration(editingFilm.duration);
+      setRating(editingFilm.rating);
       setLabel(editingFilm.label);
     }
   }, [editingFilm]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const film = { title, director, year, imageUrl, description, cast, genre, duration, label };
+    const film = {
+      id,
+      title,
+      director,
+      year,
+      imageUrl,
+      description,
+      cast,
+      genre,
+      duration,
+      rating,
+      label,
+    };
     if (editingFilm) {
       onUpdateFilm(film);
     } else {
       onAddFilm(film);
     }
-    setTitle('');
-    setDirector('');
-    setYear('');
-    setImageUrl('');
-    setDescription('');
-    setCast('');
-    setGenre('');
-    setDuration('');
+    setTitle("");
+    setDirector("");
+    setYear("");
+    setImageUrl("");
+    setDescription("");
+    setCast("");
+    setGenre("");
+    setDuration("");
+    setRating("");
     setLabel(false);
-
   };
 
   return (
@@ -60,7 +76,9 @@ const FilmForm = ({ onAddFilm, onUpdateFilm, editingFilm }) => {
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-700">Director</label>
+        <label className="block text-sm font-medium text-gray-700">
+          Director
+        </label>
         <input
           type="text"
           value={director}
@@ -80,7 +98,9 @@ const FilmForm = ({ onAddFilm, onUpdateFilm, editingFilm }) => {
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-700">Image URL</label>
+        <label className="block text-sm font-medium text-gray-700">
+          Image URL
+        </label>
         <input
           type="text"
           value={imageUrl}
@@ -90,7 +110,9 @@ const FilmForm = ({ onAddFilm, onUpdateFilm, editingFilm }) => {
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-700">Film Description</label>
+        <label className="block text-sm font-medium text-gray-700">
+          Film Description
+        </label>
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
@@ -120,7 +142,9 @@ const FilmForm = ({ onAddFilm, onUpdateFilm, editingFilm }) => {
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-700">Duration</label>
+        <label className="block text-sm font-medium text-gray-700">
+          Duration
+        </label>
         <input
           type="text"
           value={duration}
@@ -130,10 +154,22 @@ const FilmForm = ({ onAddFilm, onUpdateFilm, editingFilm }) => {
         />
       </div>
       <div>
+        <label className="block text-sm font-medium text-gray-700">
+          Rating
+        </label>
+        <input
+          type="text"
+          value={rating}
+          onChange={(e) => setRating(e.target.value)}
+          className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          required
+        />
+      </div>
+      <div>
         <label className="block text-sm font-medium text-gray-700">Label</label>
         <input
           type="text"
-          checked={label}
+          value={label}
           onChange={(e) => setLabel(e.target.value)}
           className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         />
@@ -143,7 +179,7 @@ const FilmForm = ({ onAddFilm, onUpdateFilm, editingFilm }) => {
           type="submit"
           className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
-          {editingFilm ? 'Update' : 'Add'} Film
+          {editingFilm ? "Update" : "Add"} Film
         </button>
       </div>
     </form>
